@@ -20,7 +20,7 @@ int main()
     cout << endl << "Please enter the number of marks" << endl;
     cin >> markNumber ;
 
-    // REMPLISSAGE DU TABLEAU DE NOTE
+    // DETECTION D'ERREUR
     if (markNumber==0)
     {
         cout << "Wrong key." << endl;
@@ -31,7 +31,7 @@ int main()
     {
         cout << "You chose to enter " << markNumber << " marks. " << endl;
         cout << "Enter your mark one by one please" << endl ;
-
+        // REMPLISSAGE DES NOTES DANS UN TABLEAU
         for (i=0; i < markNumber ; i++)
         {
             cin >> note ;
@@ -40,6 +40,7 @@ int main()
         }
         taille = mark.size();
         cout << "You entered " << taille << " marks." << endl;
+        // CALCUL DE LA MOYENNE
         for(i=0; i<mark.size(); ++i)
         {
             cout << "You entered " << mark[i] << "." << endl;
