@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 int main()
 {
     // INITIALISATION DES VARIABLES
     string subject("");
+    string const fichierscore("C:/Users/Alexis-/Documents/GitHub/Mark_system/TEXT.txt");
     vector<int> mark;
     int markNumber(0) , note(0), i(0), taille(0);
     double average(0);
@@ -48,6 +50,15 @@ int main()
         }
     average /= mark.size();
 
+    // ECRITURE DES INFORMATIONS DANS UN FICHIER TEXTE
+    ofstream Text(fichierscore.c_str(), ios::app);
+    if (Text)
+    {
+        Text << subject << " with the average of " << average << " !" << endl;
+    }
+    else{
+        cout << "Fichier impossible à ouvrir." << endl;
+    }
 
     cout << "Your average mark on this subject is " << average << endl;
 
