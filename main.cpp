@@ -13,6 +13,13 @@ int main()
     int markNumber(0) , note(0), i(0), taille(0);
     double average(0);
 
+    // INITIALISATION DES POINTEURS A 0
+    string *subjecta(0), *lignea(0);
+    string const *fichierscorea(0);
+    vector<int> *marka;
+    int *markNumbera(0), *notea(0), *ia(0), *taillea(0);
+    double *averagea(0);
+
 
     // ACCUEIL
     cout << "Hello Student!" << endl;
@@ -21,6 +28,11 @@ int main()
     cout << "You chose " << subject << " Good" << endl;
     cout << endl << "Please enter the number of marks" << endl;
     cin >> markNumber ;
+    // subjecta POINTE SUR subject
+    subjecta = &subject;
+    // SUBJECTA - ADRESSE - CASE ADRESSE - VALEUR CASE // ACCES A LA VALEUR SUBJECT SANS APPELER SUBJECT
+    // DEFERENCAGE SE FAIT AVEC *subjecta
+    cout << *subjecta << endl;
 
     // DETECTION D'ERREUR
     if (markNumber==0)
@@ -53,11 +65,14 @@ int main()
     // ECRITURE DES INFORMATIONS DANS UN FICHIER TEXTE
     ofstream Text(fichierscore.c_str(), ios::app);
     ifstream Textlecture(fichierscore.c_str());
+    // VERIFICATION DE L'OUVERTURE DU FICHIER EN ECRITURE
     if (Text)
     {
         Text << subject << " with the average of " << average << " !" << endl;
+        // VERIFICATION DE L'OUVERTURE DU FICHIER EN LECTURE
         if (Textlecture)
         {
+            // BOUCLE POUR AFFICHEIR TOUTES LES LIGNES D'UN FICHIER
             while(getline(Textlecture,ligne))
             {
                 cout << ligne << endl;
