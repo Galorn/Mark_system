@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     // INITIALISATION DES VARIABLES
-    string subject("");
+    string subject(""), ligne("");
     string const fichierscore("C:/Users/Alexis-/Documents/GitHub/Mark_system/TEXT.txt");
     vector<int> mark;
     int markNumber(0) , note(0), i(0), taille(0);
@@ -52,15 +52,31 @@ int main()
 
     // ECRITURE DES INFORMATIONS DANS UN FICHIER TEXTE
     ofstream Text(fichierscore.c_str(), ios::app);
+    ifstream Textlecture(fichierscore.c_str());
     if (Text)
     {
         Text << subject << " with the average of " << average << " !" << endl;
+        if (Textlecture)
+        {
+            while(getline(Textlecture,ligne))
+            {
+                cout << ligne << endl;
+            }
+        }
+        else
+        {
+            cout << "Cannot open the file" << endl;
+        }
+
+
     }
     else{
         cout << "Fichier impossible à ouvrir." << endl;
     }
 
-    cout << "Your average mark on this subject is " << average << endl;
+    cout << "Your average mark on " << subject << " is " << average << endl;
+
+
 
     }
 
