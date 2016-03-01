@@ -8,3 +8,6 @@ uio with the average of 22 !
 123 with the average of 1 !
 12 with the average of 2.5 !
 salut with the average of 1.5 !
+lol with the average of 2.5 !
+glg with the average of 0 !
+3 with the average of 3 !

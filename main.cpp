@@ -14,10 +14,10 @@ int main()
     double average(0);
 
     // INITIALISATION DES POINTEURS A 0
-    string *subjecta(0), *lignea(0);
+    string *subjecta(0), *lignea(0) ;
     string const *fichierscorea(0);
     vector<int> *marka;
-    int *markNumbera(0), *notea(0), *ia(0), *taillea(0);
+    int *markNumbera(0), *notea(0), *ia(0), *taillea(0), *number(0);
     double *averagea(0);
 
 
@@ -33,7 +33,11 @@ int main()
     // SUBJECTA - ADRESSE - CASE ADRESSE - VALEUR CASE // ACCES A LA VALEUR SUBJECT SANS APPELER SUBJECT
     // DEFERENCAGE SE FAIT AVEC *subjecta
     cout << *subjecta << endl;
-
+    number = new int;
+    *number = markNumber;
+    cout <<" coucou " << *number << endl;
+    delete number; // LIBERATION DE LA MEMOIRE POUR LA CASE DE NUMBER
+    number = 0;     // REINITIALISATION DE LA MEMOIRE 0
     // DETECTION D'ERREUR
     if (markNumber==0)
     {
